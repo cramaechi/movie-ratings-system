@@ -10,7 +10,6 @@ using namespace std;
 
 const int ROW = 4;
 const int COLUMN = 6;
-const int NUMBER_OF_MOVIES = 6;
 
 void userInput(int userRatings[]);
 //Precondition: arraySize >= 0 && <= 5. numberUsed >= 0 && <= arraySize.
@@ -38,12 +37,12 @@ void displayResults(int lastThreeRatings[], int reviewer, int size);
 int main()
 {
 	int reviewerRatings[ROW][COLUMN] = {3,1,5,2,1,5,4,2,1,4,2,4,3,1,2,4,4,1,5,1,4,2,4,2};
-	int userRatings[NUMBER_OF_MOVIES] = {0}, lastThreeMovies[NUMBER_OF_MOVIES] = {0}, closestReviewer;
+	int userRatings[COLUMN] = {0}, lastThreeMovies[COLUMN] = {0}, closestReviewer;
 
 	userInput(userRatings);
 	findReviewerMatch(reviewerRatings, userRatings, closestReviewer);
 	predictLastThreeMovieRatings(reviewerRatings, userRatings, closestReviewer, lastThreeMovies);
-	displayResults(lastThreeMovies, closestReviewer, NUMBER_OF_MOVIES);
+	displayResults(lastThreeMovies, closestReviewer, COLUMN);
 
 	return 0;
 }
